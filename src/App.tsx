@@ -2,9 +2,16 @@
 import sensors from "./sensors.json";
 import { GeoJsonObject } from "geojson";
 import { GeoJSON, MapContainer, TileLayer } from "react-leaflet";
-import { LatLng } from "leaflet";
+import L, { LatLng } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./App.css";
+
+const pinIcon = L.icon({
+  iconUrl: "/assets/marker-icon-2x.png", // 任意のアイコン画像のURL
+  iconSize: [25, 41], // アイコンのサイズ
+  iconAnchor: [25, 41], // アイコンのアンカーポイント
+  popupAnchor: [-12, -36], // ポップアップのアンカーポイント
+});
 
 function App() {
   const center = new LatLng(50.845100945010074, 14.741025136756022);
@@ -20,6 +27,10 @@ function App() {
       const content = `${thumbnail}<div class="dsg-popup-content-body"><h2 class="dsg-popup-content-name"><a href=${
         `https://` + url
       } target="_blank">${organization}</a></h2><p class="dsg-popup-content-organization">${name}</p><p class="dsg-popup-content-url">${url}</p></div>`;
+
+      if (layer instanceof L.Marker) {
+        layer.setIcon(pinIcon);
+      }
 
       layer.bindPopup(content);
     }
