@@ -1,7 +1,7 @@
-// import React from "react";
+// import React, { useRef, useState, useEffect } from "react";
 import sensors from "./sensors.json";
 import { GeoJsonObject } from "geojson";
-import { GeoJSON, MapContainer, TileLayer } from "react-leaflet";
+import { GeoJSON, MapContainer, TileLayer, useMap } from "react-leaflet";
 import L, { LatLng } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./App.css";
@@ -13,8 +13,8 @@ const pinIcon = L.icon({
   popupAnchor: [-12, -36], // ポップアップのアンカーポイント
 });
 
-function App() {
-  const center = new LatLng(50.845100945010074, 14.741025136756022);
+function MyComponent() {
+  const map = useMap();
 
   function onEachFeature(feature: any, layer: L.Layer) {
     if (feature.properties) {
@@ -30,11 +30,25 @@ function App() {
 
       if (layer instanceof L.Marker) {
         layer.setIcon(pinIcon);
+
+        layer.on("popupopen", function () {
+          const markerLatLng = layer.getLatLng();
+
+          map.setView(markerLatLng, 4);
+        });
       }
 
       layer.bindPopup(content);
     }
   }
+
+  return (
+    <GeoJSON data={sensors as GeoJsonObject} onEachFeature={onEachFeature} />
+  );
+}
+
+function App() {
+  const center = new LatLng(50.845100945010074, 14.741025136756022);
 
   return (
     <div className="App">
@@ -43,10 +57,7 @@ function App() {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <GeoJSON
-          data={sensors as GeoJsonObject}
-          onEachFeature={onEachFeature}
-        />
+        <MyComponent />
       </MapContainer>
     </div>
   );
