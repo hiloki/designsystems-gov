@@ -1,5 +1,6 @@
 // import React from "react";
 import sensors from "./sensors.json";
+import { GeoJsonObject } from "geojson";
 import { GeoJSON, MapContainer, TileLayer } from "react-leaflet";
 import { LatLng } from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -31,7 +32,10 @@ function App() {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <GeoJSON data={sensors} onEachFeature={onEachFeature} />
+        <GeoJSON
+          data={sensors as GeoJsonObject}
+          onEachFeature={onEachFeature}
+        />
       </MapContainer>
     </div>
   );
