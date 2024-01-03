@@ -1,0 +1,148 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "デジタル庁デザインシステム",
+        "organization": "Japan Digital Agency",
+        "url": "www.digital.go.jp/policies/servicedesign/designsystem",
+        "thumbnailId": "ja"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.7369510829295, 35.679732571282635]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "U.S. Web Design System",
+        "organization": "United States Government",
+        "url": "designsystem.digital.gov",
+        "thumbnailId": "us"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0366275475021, 38.8978135700899]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "GOV.UK Design System",
+        "organization": "HM Government",
+        "url": "design-system.service.gov.uk",
+        "thumbnailId": "uk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.07295327388738757, 51.514562243698755]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Brand Estonia",
+        "organization": "Enterprise Estonia",
+        "url": "brand.estonia.ee",
+        "thumbnailId": "ee"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [24.740183626557695, 59.43806973584046]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Canada.ca design system",
+        "organization": "Government of Canada",
+        "url": "design.canada.ca/",
+        "thumbnailId": "ca"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.70093973186673, 45.423736743527414]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chicago Design System",
+        "organization": "City of Chigago",
+        "url": "design.chicago.gov",
+        "thumbnailId": "us-chicago"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.63209926086581, 41.88401447381696]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Singapore Government Design System",
+        "organization": "Government of Singapore",
+        "url": "www.designsystem.tech.gov.sg",
+        "thumbnailId": "sg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [103.84306800941285, 1.306993501909264]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Scottish Government Design System",
+        "organization": "Scottish Government",
+        "url": "designsystem.gov.scot",
+        "thumbnailId": "gb"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-3.183906344807828, 55.9537432535329]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Système de Design de l'État",
+        "organization": "",
+        "url": "www.systeme-de-design.gouv.fr",
+        "thumbnailId": "fr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.320639539466276, 48.85458045709304]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Design System - gov.cy",
+        "organization": "",
+        "url": "gov-cy.github.io/govcy-design-system-docs",
+        "thumbnailId": "cy"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [33.34733079838287, 35.155952441538496]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Poncho",
+        "organization": "Government of Argentina",
+        "url": "argob.github.io/poncho",
+        "thumbnailId": "ar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-58.37036004739628, -34.60800830342023]
+      }
+    }
+  ]
+}

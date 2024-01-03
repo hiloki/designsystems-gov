@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+/* Leaflet */
+.leaflet-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.leaflet-popup-content-wrapper {
+  overflow: hidden;
+  padding: 0;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  min-width: 301px;
+}
+
+.leaflet-popup-content .dsg-popup-content-thumbnail {
+  border-bottom: solid 1px #efefef;
+  max-width: 100%;
+}
+
+.leaflet-popup-content .dsg-popup-content-name {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+}
+
+.leaflet-popup-content .dsg-popup-content-body {
+  padding: 8px 22px 12px 22px;
+}
+
+.leaflet-popup-content .dsg-popup-content-organization {
+  margin: 6px 0 0 0;
+  font-size: 12px;
+  color: #333;
+}
+
+.leaflet-popup-content .dsg-popup-content-url {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  font-size: 12px;
+  color: #aaa;
+}
