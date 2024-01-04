@@ -13,7 +13,7 @@ const pinIcon = L.icon({
   popupAnchor: [-12, -36], // ポップアップのアンカーポイント
 });
 
-function MyComponent() {
+function CustomComponent() {
   const map = useMap();
 
   function onEachFeature(feature: any, layer: L.Layer) {
@@ -24,9 +24,15 @@ function MyComponent() {
             `https://` + url
           } target="_blank"><img src="/assets/${thumbnailId}.png" alt="${name} thumbnail image" class="dsg-popup-content-thumbnail" /></a>`
         : "";
-      const content = `${thumbnail}<div class="dsg-popup-content-body"><h2 class="dsg-popup-content-name"><a href=${
+      const body = `<div class="dsg-popup-content-body"><h2 class="dsg-popup-content-name"><a href=${
         `https://` + url
-      } target="_blank">${organization}</a></h2><p class="dsg-popup-content-organization">${name}</p><p class="dsg-popup-content-url">${url}</p></div>`;
+      } target="_blank">${name}</a></h2>${
+        organization
+          ? `<p class="dsg-popup-content-organization">by ${organization}</p>`
+          : ""
+      }<p class="dsg-popup-content-url">${url}</p></div>`;
+
+      const content = thumbnail + body;
 
       if (layer instanceof L.Marker) {
         layer.setIcon(pinIcon);
@@ -34,7 +40,7 @@ function MyComponent() {
         layer.on("popupopen", function () {
           const markerLatLng = layer.getLatLng();
 
-          map.setView(markerLatLng, 4);
+          map.setView(markerLatLng, 3);
         });
       }
 
@@ -57,7 +63,7 @@ function App() {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <MyComponent />
+        <CustomComponent />
       </MapContainer>
     </div>
   );
